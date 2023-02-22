@@ -22,39 +22,6 @@
         </span>
         
     </a> 
-    <?php
-        if(!isset($_SESSION['products']) || empty($_SESSION['products'])){
-                    echo "<div class='divclass'><h1>No Product For Current Session!</h1></div>";
-                }else{
-                    echo "<div class='divclass'>
-                            <table class='tableclass'>".
-                            "<thead class='theadclass'>".
-                                "<tr>".
-                                    "<th>Nom</th>".
-                                    "<th>Prix</th>".
-                                    "<th>Quantité</th>".
-                                    "<th>Total</th>".
-                                "</tr>".
-                            "</thead>".
-                        "<tbody>";
-                    $sumTotal = 0;
-                    //loop all existant products
-                    foreach($_SESSION['products'] as $key => $product){
-                        echo "<tr>".
-                                "<td>".$product['name']."</td>".
-                                "<td>".$product['price']."€</td>".
-                                "<td>".$product['qtt']."</td>".
-                                "<td>".$product['total']."€</td>".
-                            "</tr>";
-                        $sumTotal += $product['total'];
-                    }
-                    echo "<tr>".
-                            "<td>Total : </td>".
-                            "<td>".$sumTotal ."€</td>".
-                            "</tr>".
-                        "</tbody></table></div>";
-                        }
-                ?>
   
     <div class="divclass">
         <!-- post pour pas l'ajouter dans le url-->
