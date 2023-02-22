@@ -54,7 +54,7 @@
                 "<td class=''>" . $product['qtt'] . "</td>".
                 "<td class=''>" . $product['total'] . "</td>".
             "</tr>";
-        $totalGeneral += $product['total'] *$product['qtt'];
+        $totalGeneral += $product['total'];
     }
     echo "<tr>"."<td class ='tdclass' colspan='4'>".$totalGeneral."€</td>".
          "</tr></tbody></table></div>";
