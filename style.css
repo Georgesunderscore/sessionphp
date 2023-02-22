@@ -1,4 +1,15 @@
+
 .tdclass{
     text-align: right;
 
+}
+
+
+*{
+    margin: 10px;
+}
+
+li{
+    padding: 10px;
+    margin: 10px;
 }
