@@ -10,7 +10,7 @@ const element = (
     
   );
 
-ReactDOM.render(element,document.getElementById('#reactnav'));
+ReactDOM.render(element,document.getElementById('#elementtest'));
 // ReactDOM.render(<reactnav menu1 ={menu1} url1 ={url1} menu2 ={menu2} url21 ={url2}/>);
 
 
