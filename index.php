@@ -40,7 +40,7 @@
         </div>    
 
         <div class="divclass">
-            <label for="prix">Quantité désiré :</label>
+            <label for="prix">Quantité :</label>
             <input type="number" name="qtt">  
         </div>
             <input type="submit" name="submit" value="Ajouter le produit">
