@@ -102,15 +102,15 @@
                 "<td class='tdclass'>".number_format($product['price'],2, ",", "&nbsp;")."&nbsp;€</td>".
                 // passer le parametre id d-flex justify-content-evenly 
                 "<td >".
-                    "<a  href='traitement.php?action=moins&id='".$index.">-</a>".
+                    "<a  href='traitement.php?action=moins&id=".$index."'>-</a>".
                         $product['qtt'].
-                    "<a  href='traitement.php?action=plus&id='".$index."> +</a></td>".
+                    "<a  href='traitement.php?action=plus&id=".$index."'> +</a></td>".
                 
                 // "<td class=''>" . $product['total'] . "</td>".
                 "<td class='tdclass'>".number_format($product['total'],2, ",", "&nbsp;")."&nbsp;€</td>".
 
                 
-                "<td><a href='traitement.php?action=removeProduct&id='".$index."'class='text-decoration-none'>RP</a></td>".
+                "<td><a href='traitement.php?action=removeProduct&id=".$index."'class='text-decoration-none'>RP</a></td>".
 
 
 
@@ -123,6 +123,18 @@
          "<td><a class='btn btn-danger' href='traitement.php?action=clear'>Clear All</a></td>".
          "</tr></tbody></table></div>";
         }        
+
+
+    if(isset($_SESSION['returnmsg'])){
+        echo "<div class=". $_SESSION['class']. ">"; 
+        echo "<span class = 'help-block' style='background-color:".$_SESSION['backgroundcol']."'>"
+            .$_SESSION['returnmsg']
+            ."</span></div>";
+        }
+        unset($_SESSION['returnmsg']);
+        unset($_SESSION['backgroundcol']);   
+        unset($_SESSION['class']);   
+
 ?>
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
