@@ -3,8 +3,8 @@
 session_start();
 
 
-// switch ($_GET['action']) {
-    // case 'addProduct':
+ switch ($_GET['action']) {
+    case 'addProduct':
         //to control that it is from the button call submit 
         if (isset($_POST['submit'])) {
             $name = filter_input(INPUT_POST, "name", FILTER_SANITIZE_STRING);
@@ -20,12 +20,26 @@ session_start();
                     ];
                 //ADD THE PRODUCT TO THE LIST OF PRODUCTS 
                 $_SESSION['products'] []= $product;
-        }
-
-    header("Location:index.php");
+                //success message  
+                $_SESSION['returnmsg'] = " le Produit " .$name." est Bien ajouter  !";
+                $_SESSION['backgroundcol'] = "green";
+                $_SESSION['class'] = "has-success";
+                
+            }else{
+                $_SESSION['returnmsg'] = "Erreur Produit Incomplet !";
+                $_SESSION['backgroundcol'] = "red";
+                $_SESSION['class'] = "has-error";
+            }
+            //error message
+            header("Location:index.php");
     
 
     }
-// }
+
+    case 'plus':
+        //to control that it is from the button call submit 
+        if (isset($_GET['submit'])) {
+
+ }
 
 ?>

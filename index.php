@@ -16,48 +16,54 @@
         <!-- fonctionalite row -->
         <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" />
 
-        <!-- <link rel="stylesheet" href="css/bootstrap.css">
-        <link rel="stylesheet" href="style.css"> -->
+        <!-- <link rel="stylesheet" href="css/bootstrap.css">-->
+        <link rel="stylesheet" href="style.css">    
+
 
     </head>
     <body>
-
-    <div id="like_button_container"></div>
-
-
-  <ul class="nav pull-right">
-
-    <!-- Bootstrap's color utility class -->
-    <li class="active"><a class="text-success" href="#">one</a></li>
-    
-    <!-- Bootstrap's color utility class -->
-    <li><a class="text-danger" href="#">two</a></li>
-
-    <!-- Bootstrap's color utility class -->
-    <li><a class="text-warning" href="#">three</a></li>
-
-    <!-- Custom color utility class -->
-    <li><a class="text-my-own-color" href="#">for</a></li>
-
-  </ul>
-
-  <div id="reactnav" data-menu1="Home" data-url1="index.php" data-menu2="Recap" data-url2="recap.php"> </div>
-  <div id="elementtest"> </div>
-
-    <a href="recap.php" class="active">Products Recap Link 
-        <span class="spanclass">
-            <?php
-                //get the current session if exist  else faut la cree 
-                session_start();
-                    if(isset($_SESSION['products'])){
-                        echo count($_SESSION['products']);
-                    }else{
-                        echo "0";
-                    }
-            ?>
-        </span>
+    <div class="pos-f-t">
+        <nav class="navbar navbar-dark bg-dark r-expand-lg navbar-light bg-light sticky-top" >
+            <button class="navbar-toggler" type="button"
+                data-toggle="collapse" data-target="#navbarToggleExternalContent" 
+                aria-controls="navbarToggleExternalContent" aria-expanded="false" 
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        </nav>
+    <div class="collapse" id="navbarToggleExternalContent">
+        <div class="bg-light">
+            <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                <li class="nav-item active">
+                    <a class="nav-link" href="index.php">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item active">
+                    <a href="recap.php" class="nav-link">Products Recap 
+                        
         
-    </a> 
+                    </a> 
+                    <!-- <a class="nav-link" href="#">Recap</a> -->
+                </li>
+            </ul>
+        </div>
+    </div>
+    </div>
+
+  <!-- <div id="reactnav" data-menu1="Home" data-url1="index.php" data-menu2="Recap" data-url2="recap.php"> </div> -->
+  <!-- <div id="elementtest"> </div> -->
+
+  <span class="spanclass">
+    Les nombres des produit: 
+    <?php
+        //get the current session if exist  else faut la cree 
+        session_start();
+            if(isset($_SESSION['products'])){
+                echo count($_SESSION['products']);
+            }else{
+                echo "0";
+            }
+    ?>
+</span>
   
     <div class="divclass">
         <!-- post pour pas l'ajouter dans le url-->
@@ -87,6 +93,21 @@
         </div>
         </form>
     </div>
+
+    <?php
+        if(isset($_SESSION['returnmsg'])){
+        echo "<div class=". $_SESSION['class']. ">"; 
+        echo "<span class = 'help-block' style='background-color:".$_SESSION['backgroundcol']."'>"
+            .$_SESSION['returnmsg']
+            ."</span></div>";
+        }
+        unset($_SESSION['returnmsg']);
+        unset($_SESSION['backgroundcol']);   
+        unset($_SESSION['class']);   
+    ?>
+    
+
+
     <!--javascript file   -->
     
     <!-- scipt jquery et bootstrap pour ajouter des composant bootstrap carrousel, dropdown, modal -->
@@ -106,7 +127,7 @@
     
     <!-- <script src="like_button.js"></script> -->
     <!-- <script src="reactnav.js"></script> -->
-    <script src="main.js"></script>
+    <!-- <script type ="module" src="main.js"></script> -->
 
     </body>
 </html>
